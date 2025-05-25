@@ -1,0 +1,43 @@
+.notepad-container {
+    width: 33.33%;
+    height: 83.33%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 992px) {
+    .notepad-container {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .notepad-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .ql-editor {
+        min-height: 150px;
+    }
+    
+    .ql-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .notepad-container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .ql-toolbar {
+        padding: 4px !important;
+    }
+}

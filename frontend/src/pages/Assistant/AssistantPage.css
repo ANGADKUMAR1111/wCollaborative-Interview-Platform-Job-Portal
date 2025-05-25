@@ -1,0 +1,629 @@
+/* Add styles for offline mode */
+.assistant-header.offline-mode {
+  background-color: #9ca3af;
+}
+
+.offline-banner {
+  padding: 10px;
+  background-color: #fee2e2;
+  color: #ef4444;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+  border-bottom: 1px solid #fecaca;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offline-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.assistant-page {
+  background-color: #f9fafb;
+  min-height: calc(100vh - 120px);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.assistant-container {
+  width: 100%;
+  max-width: 800px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 120px); /* Slightly increased height */
+  overflow: hidden; /* Container shouldn't scroll */
+}
+
+.assistant-header {
+  background-color: #18191c;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0; /* Don't shrink header */
+}
+
+.assistant-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.assistant-title h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.assistant-icon {
+  font-size: 1.8rem;
+}
+
+.refresh-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.refresh-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.assistant-description {
+  flex-shrink: 0; /* Don't shrink description */
+  padding: 12px 15px;
+  background-color: #f0f0ff;
+  border-bottom: 1px solid #e5e7eb;
+  max-height: 90px; /* Reduced height */
+  overflow-y: auto; /* Make description area scrollable if needed */
+}
+
+.assistant-description p {
+  margin: 0 0 6px 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.assistant-description ul {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 25px;
+}
+
+.assistant-description ul li {
+  font-size: 0.8rem;
+  color: #6b7280;
+  flex: 1 1 40%;
+}
+
+.assistant-messages {
+  flex: 1; /* Take all available space */
+  padding: 12px 15px;
+  overflow-y: auto; /* Allow vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  min-height: 0; /* Allow container to shrink if needed */
+  overflow-x: hidden;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  width: auto;
+  max-width: 85%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4px;
+  overflow: visible;
+}
+
+.message-icon {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.message-content {
+  font-size: 1rem;
+  white-space: pre-wrap; /* Preserve newlines and spaces */
+  overflow-wrap: break-word;
+  width: 100%;
+  line-height: 1.6;
+  overflow: visible;
+  height: auto;
+  min-height: 1.6em;
+  overflow-x: hidden;
+}
+
+.user-message {
+  background-color: #18191c;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+  text-align: right;
+  margin-left: auto;
+  max-width: 75%;
+  padding-right: 18px;
+  height: auto;
+  overflow: visible;
+}
+
+.bot-message {
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+  margin-right: auto;
+  max-width: 75%;
+  padding-left: 14px;
+  height: auto;
+  overflow: visible;
+}
+
+/* System message styles for notices/errors */
+.system-message {
+  background-color: #fef3c7;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+  align-self: center;
+  max-width: 90%;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+/* Typing indicator */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 24px;
+  min-width: 50px;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #9ca3af;
+  display: block;
+  animation: typing 1.4s infinite ease-in-out both;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes typing {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.assistant-input {
+  flex-shrink: 0; /* Don't shrink input area */
+  padding: 12px 15px;
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #e5e7eb;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.assistant-input input {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  border-radius: 24px;
+  padding: 10px 45px 10px 16px; /* Adjusted for char counter */
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  min-height: 20px;
+  max-height: 60px;
+  width: 100%;
+}
+
+.assistant-input input:focus {
+  border-color: #18191c;
+}
+
+.assistant-input button {
+  background-color: #18191c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 44px;
+}
+
+.assistant-input button:hover:not(:disabled) {
+  background-color: #4338ca;
+  transform: scale(1.05);
+}
+
+/* Style for disabled button */
+.assistant-input button:disabled {
+  background-color: #d1d5db;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.char-counter {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: #9ca3af;
+  background-color: transparent;
+  padding: 2px 5px;
+}
+
+/* Empty state message */
+.empty-state {
+  text-align: center;
+  color: #9ca3af;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Add some visual separation between groups of messages */
+.message + .message.bot-message,
+.message + .message.user-message {
+  margin-top: 2px;
+}
+
+/* Add a slight delay to typing indicators for better UX */
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Improve message content styling */
+.message-content {
+  font-size: 1rem;
+  white-space: pre-wrap; /* Preserve newlines and spaces */
+  overflow-wrap: break-word;
+  width: 100%;
+  line-height: 1.6;
+  overflow: visible;
+  height: auto;
+  min-height: 1.6em;
+}
+
+/* Add a slight max height to prevent extremely long messages */
+.bot-message .message-content {
+  max-height: none;
+  overflow-y: visible;
+  white-space: pre-wrap;
+}
+
+/* Scrollbar styling for message content */
+.bot-message .message-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.bot-message .message-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.bot-message .message-content::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.bot-message .message-content::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.assistant-unauthorized {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  background-color: #f9fafb;
+}
+
+.assistant-content {
+  text-align: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+.assistant-content .assistant-icon {
+  font-size: 4rem;
+  color: #18191c;
+  margin-bottom: 20px;
+}
+
+.assistant-content h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.8rem;
+  color: #1f2937;
+}
+
+.assistant-content p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.retry-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.retry-button:hover:not(:disabled) {
+  background-color: #dc2626;
+}
+
+.retry-button.retrying {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.retry-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.retry-button.retrying::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  border: 2px solid white;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .assistant-page {
+    padding: 20px 10px;
+  }
+  
+  .assistant-container {
+    height: calc(100vh - 160px);
+  }
+  
+  .assistant-description ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .assistant-description ul li {
+    flex: 1 1 100%;
+  }
+  
+  .message {
+    max-width: 85%;
+  }
+  
+  .user-message {
+    max-width: 80%;
+  }
+  
+  .bot-message {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 480px) {
+  .message {
+    max-width: 90%;
+    padding: 10px 12px;
+  }
+  
+  .assistant-input input {
+    font-size: 0.9rem;
+  }
+  
+  .message-content {
+    font-size: 0.95rem;
+  }
+}
+
+.model-status-message {
+  background-color: #fff8e6;
+  border: 1px solid #ffd480;
+  border-radius: 4px;
+  padding: 10px 16px;
+  margin: 5px 20px;
+  font-size: 0.85rem;
+  color: #b45309;
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+.model-status-details {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #92400e;
+}
+
+/* Fix spacing within the messages container */
+.assistant-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.assistant-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.assistant-messages::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.assistant-messages::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Group consecutive messages from the same sender */
+.bot-message + .bot-message {
+  margin-top: -5px;
+  border-top-left-radius: 10px;
+}
+
+.user-message + .user-message {
+  margin-top: -5px;
+  border-top-right-radius: 10px;
+}
+
+/* Status warning banner at top of page */
+.service-status-warning {
+  background-color: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-left: none;
+  border-right: none;
+  padding: 8px 15px;
+  font-size: 0.85rem;
+  color: #92400e;
+  text-align: center;
+  flex-shrink: 0; /* Don't shrink warning */
+}
+
+/* Bot avatar styling - circular icon */
+.bot-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #18191c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.bot-message:hover .bot-avatar {
+  transform: scale(1.05);
+}
+
+/* Send button styling - circular icon */
+.send-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e5e5ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.send-icon {
+  font-size: 1rem;
+  color: rgb(17, 15, 15);
+}
+
+/* Add animation for send button */
+@keyframes sendHover {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.send-button:hover:not(:disabled) .send-icon-circle {
+  animation: sendHover 1s infinite;
+  background-color: #4338ca;
+}
+
+.send-button:disabled .send-icon-circle {
+  background-color: #d1d5db;
+  cursor: not-allowed;
+} 

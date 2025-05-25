@@ -1,0 +1,74 @@
+/*AudioVideoScreen.css*/
+.container {
+    display: flex;
+    width: 100%;
+    height: 33.33%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+.video-container {
+    width: 33.33%;
+    position: relative;
+}
+
+.video {
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: auto;
+}
+
+.video-status {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 1200px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .video-container {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .video-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .video-status {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+    }
+}
